@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yasmi.unirest.Chat">
+
+    <TextView
+        android:id="@+id/auth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <com.github.library.bubbleview.BubbleTextView
+        android:id="@+id/wlcmMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/auth"
+        android:layout_alignStart="@+id/auth"
+        android:layout_below="@+id/auth"
+        android:fontFamily="cursive"
+        android:padding="10dp"
+        android:text="TextView"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        app:angle="8dp"
+        app:arrowCenter="true"
+        app:arrowHeight="10dp"
+        app:arrowLocation="left"
+        app:arrowWidth="8dp"
+        app:bubbleColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auth" />
+
+
+
+    <com.github.library.bubbleview.BubbleTextView
+        android:id="@+id/userMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:padding="10dp"
+        android:text="TextView"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:angle="8dp"
+        app:arrowCenter="true"
+        app:arrowHeight="10dp"
+        app:arrowLocation="right"
+        app:arrowWidth="8dp"
+        app:bubbleColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auth"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/wlcmMessage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp" />
+
+    <EditText
+        android:id="@+id/userInput"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:fontFamily="cursive"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Send message ..."
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/userInput"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/sendbutton"
+        android:fontFamily="cursive"
+        android:text="send"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <ListView
+        android:id="@+id/historyList"
+        style="@style/Widget.AppCompat.ListView.DropDown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_alignRight="@+id/userMessage"
+        android:layout_alignEnd="@+id/userMessage"
+        android:layout_above="@+id/sendBtn"
+        android:layout_below="@+id/auth"
+        android:stackFromBottom="true"/>
+
+    <Button
+        android:background="@drawable/newbutton"
+        android:id="@+id/newButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="new"
+        android:textColor="#FFF"
+        android:fontFamily="cursive"
+        android:text="New"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:layout_alignTop="@+id/userInput"
+        android:layout_toLeftOf="@+id/sendBtn"
+        android:layout_toStartOf="@+id/sendBtn" />
+
+    <Button
+        android:id="@+id/usedbutton"
+        android:background="@drawable/usedbutton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:fontFamily="cursive"
+        android:text="used"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/historyList"
+        android:layout_toLeftOf="@+id/userMessage"
+        android:layout_toStartOf="@+id/userMessage" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="@drawable/resetbutton"
+        android:fontFamily="cursive"
+        android:text="reset"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        android:layout_above="@+id/historyList"
+        android:layout_alignRight="@+id/historyList"
+        android:layout_alignEnd="@+id/historyList" />
+
+
+</android.widget.RelativeLayout>
